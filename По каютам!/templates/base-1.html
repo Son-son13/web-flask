@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>Кто стоит в очереди?</h1>
+{% set text = "Каюта №" %}
+<ul>
+    {% for user in user_list %}
+    <li>{{ user }} - {% if loop.first %} text + {{ loop.index }} - "капитан корабля" {% elif loop.last %} text + {{ loop.index }}
+    {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
